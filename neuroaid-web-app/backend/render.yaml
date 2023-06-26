@@ -1,0 +1,3 @@
+name: neuroaid-web-app-api
+buildCommand: npm ci
+startCommand: node server.js

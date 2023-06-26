@@ -1,0 +1,223 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GENERAL STYLES */
+
+html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  color: black;
+}
+
+ul {
+  padding: 0 0.5rem;
+}
+
+li {
+  display: list-item;
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+/* SITEWIDE */
+
+.app {
+  text-align: center;
+  margin: auto;
+}
+
+.body-width {
+  width: 315px;
+}
+
+.shadow-md {
+  box-shadow: 0px 1.5px 2.5px 1px rgb(0, 0, 0, 0.25);
+}
+
+.shadow-lg {
+  box-shadow: 0px 3px 15px 5px rgb(0, 0, 0, 0.1);
+}
+
+/* Credit: https://cssgradient.io/blog/css-gradient-text/ */
+.bg-gradient:active, .bg-gradient:hover {
+  background: -webkit-linear-gradient(180deg, #8FCEFF, #F5B400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 350ms ease-in;
+}
+
+.text-gradient {
+  background: -webkit-linear-gradient(180deg, #8FCEFF, #F5B400);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SPECIFIC CLASSES */
+
+.reflect {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+#intro-container {
+  height: calc(100vh - 112px);
+  height: calc(100svh - 112px);
+}
+
+.intro {
+  height: 300px;
+}
+
+#woman-focused {
+  /* background: url('https://photo-gear-ecommerce.s3.us-west-1.amazonaws.com/adobestock-focused-bg.png'); */
+  background-repeat: none;
+  background-size: cover;
+  animation-duration: 5s;
+  animation-name: rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+/* #calltoaction-div {
+  height: calc(100vh - 144px);
+} */
+
+/* ANIMATIONS */
+
+@keyframes rotate {
+  0% { transform: rotate(0); }
+  33% { transform: rotate(-20deg); }
+  66% { transform: rotate(20deg); }
+  100% { transform: rotate(0); }
+}
+
+.bounce-animation {
+  animation-duration: 1s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce {
+  0% { transform: translatey(0); }
+  50% { transform: translatey(0.5rem); }
+  100% { transform: translatey(0); }
+}
+
+.arrow-x-animation {
+  animation-duration: 1s;
+  animation-name: side-to-side;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes side-to-side {
+  0% { transform: translatex(0) rotate(90deg); }
+  50% { transform: translatex(0.5rem) rotate(90deg); }
+  100% { transform: translatex(0) rotate(90deg); }
+}
+
+.bell-animation {
+  animation-duration: 2s;
+  animation-name: move;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes move {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  35% { transform: rotate(10deg); }
+  40% { transform: rotate(-10deg); }
+  45% { transform: rotate(10deg); }
+  50% { transform: rotate(0); }
+}
+
+.writing-animation {
+  animation-duration: 2s;
+  animation-name: writing;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+}
+
+@keyframes writing {
+  0% { transform: translatex(0) rotate(25deg); }
+  25% { transform: translatex(0.25rem) rotate(20deg); }
+  25% { transform: translatex(0.4rem) rotate(25deg); }
+  40% { transform: translatex(0.5rem) rotate(30deg); }
+  75% { transform: translatex(0.5rem) rotate(20deg); }
+  100% { transform: translatex(0) rotate(25deg); }
+}
+
+.arrow-up-animation {
+  animation-duration: 0.7s;
+  animation-name: arrow-up;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes arrow-up { 
+  50% { transform: translatex(0.25rem) translatey(-0.25rem); }
+}
+
+/* MEDIA QUERIES */
+
+@media (prefers-reduced-motion: reduce) {
+  .bounce-animation, .writing-animation, .arrow-x-animation, .bell-animation, .arrow-up-animation, #arrow-icon {
+    animation-name: none;
+  }
+}
+
+@media (min-width: 440px) {
+  .body-width {
+    width: 375px;
+  }
+  .intro {
+    height: 300px;
+  }
+}
+
+@media (min-width: 525px) {
+  .body-width {
+    width: 500px;
+  }
+}
+
+@media (min-width: 640px) {
+  .body-width {
+    width: 595px;
+  }
+  #intro-container {
+    height: calc(100vh - 120px);
+  }
+  .intro {
+    height: 500px;
+  }
+  /* #calltoaction-container {
+    height: 50vh;
+  } */
+  /* #calltoaction-div {
+    height: 40vh;
+  } */
+}
+
+@media (min-width: 768px) {
+  .body-width {
+    width: 715px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .body-width {
+    width: 900px;
+  }
+}
