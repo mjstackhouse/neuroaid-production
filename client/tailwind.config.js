@@ -41,6 +41,9 @@ module.exports = {
     extend: {
       flex: {
         '1': '0 1 auto'
+      },
+      screens: {
+        'xs': '540px'
       }
     },
   },
