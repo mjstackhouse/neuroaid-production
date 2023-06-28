@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import CallToAction from "../components/CallToAction";
 import Footer from '../components/Footer';
 import axios from 'axios';
 import { useState, useEffect } from 'react';

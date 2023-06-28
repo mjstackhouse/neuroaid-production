@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faYoutube} from '@fortawesome/free-brands-svg-icons';
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 function Footer() {
   return (
@@ -11,7 +10,7 @@ function Footer() {
         <div className='basis-full sm:basis-1/4 flex place-content-center sm:place-content-start text-gray sm:mb-0'>
           {/* <span className='text-2xl sm:text-3xl mx-4'>|</span> */}
           <div className='flex flex-wrap place-items-center sm:place-content-start'>
-            <p className="hidden sm:block sm:basis-full text-center sm:text-left font-serif text-gray font-bold text-base sm:text-2xl">neuro-aid</p>
+            <p className="font-sans hidden sm:block sm:basis-full text-center sm:text-left font-serif text-gray font-bold text-base sm:text-2xl">neuro-aid</p>
             <FontAwesomeIcon className="hover:text-black text-center text-3xl mr-1 sm:mr-2" icon={faTwitter} />
             <FontAwesomeIcon className="hover:text-black text-center text-3xl mr-1 sm:mr-2" icon={faFacebook} />
             <FontAwesomeIcon className="hover:text-black text-center text-3xl" icon={faYoutube} />
