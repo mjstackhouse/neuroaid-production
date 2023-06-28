@@ -1,16 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
-import { useState } from 'react';
 import $ from 'jquery';
 
 function PricingBody() {
 
-  const [plan, updatePlan] = useState('basic-plan');
-
   function changePlan(e) {
     const selectedPlan = e.target.value;
-    console.log('selectedPlan:', selectedPlan);
-    updatePlan(selectedPlan);
 
     if (selectedPlan === 'basic-plan') {
       $('#basic-plan').removeClass('hidden');
@@ -43,7 +38,6 @@ function PricingBody() {
                 <option value="ultimate-plan" className='text-base sm:text-lg'>Ultimate Plan</option>
               </select>
             </div>
-            {/* New div */}
             <div className="flex flex-row text-center bg-white text-left h-screen rounded-3xl shadow-lg">
               <div className='basis-2/3 text-base sm:text-lg sm:basis-1/4 flex flex-col divide-black divide-solid'>
                 <div className='basis-[9.09090909091%] flex'>
@@ -178,17 +172,11 @@ function PricingBody() {
       <div className="body-width mx-auto">
         <div className='flex place-items-center p-4'>
           <h1 className="font-mono basis-full inline text-black text-center sm:text-left text-2xl sm:text-4xl font-bold">Why pricing tiers?</h1>
-          {/* <span className='sm:text-right basis-3/6 reflect'>
-            <FontAwesomeIcon className="text-black text-6xl sm:text-7xl rotate-90 arrow-x-animation" icon={icon({name: 'arrow-turn-up', style: 'solid'})} />
-          </span> */}
         </div>
         <div className="text-black text-left bg-white rounded-3xl shadow-lg px-4 py-4 sm:px-8 sm:py-4 mb-4">
           <p className="text-base sm:text-lg leading-loose">
             <span className="font-semibold">At Neuro-Aid,</span> our goal is to make a tangible difference in the lives of individuals managing ADHD by providing them with a powerful mobile application. Recognizing the diverse financial circumstances of our users, we are committed to offering flexible pricing options that ensure accessibility for everyone. We firmly believe that managing ADHD should not be hindered by financial constraints, and our aim is to make Neuro-Aid a valuable tool that is within reach for individuals from all walks of life.
           </p>
-          {/* <p className="text-base sm:text-lg pt-4 leading-loose">
-          <span className="font-semibold">To achieve our goal of flexible pricing,</span> we have implemented a tiered pricing structure that allows users to choose a plan that aligns with their budget and needs. We offer different subscription levels, ranging from a free basic plan to premium plans with enhanced features and support. Our intention is to provide a robust set of tools and resources to all users, regardless of their chosen plan. By offering flexible pricing options, we strive to empower individuals with ADHD to access the support they need to thrive and manage their condition effectively, fostering inclusivity and ensuring that financial considerations do not hinder their journey towards success.
-          </p> */}
         </div>
       </div>
       <img className='' src='https://photo-gear-ecommerce.s3.us-west-1.amazonaws.com/adobestock-diversity-3-cropped.png' alt='Colorful illustration of a diverse group of people' />

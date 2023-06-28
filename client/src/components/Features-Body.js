@@ -4,7 +4,7 @@ function FeaturesBody() {
       <div className="body-width mx-auto mb-16">
         <div className="mt-8">
           <div className=''>
-            <h1 className="font-mono basis-full text-black text-center sm:text-left pt-2 pb-2 sm:pt-4 m-0 text-2xl sm:text-4xl font-bold z-10">What tools does <span className="underline decoration-blue decoration-4 sm:decoration-8 underline-offset-4" id="features-body-header">Neuro-Aid</span> provide?</h1>
+            <h1 className="font-mono basis-full text-black text-center sm:text-left pt-2 pb-2 sm:pt-4 m-0 text-2xl sm:text-4xl font-bold z-10">What tools does Neuro-Aid provide?</h1>
           </div>
           <div className="flex flex-wrap flex-col leading-loose">
             <p className="text-center text-base sm:text-lg sm:text-left mb-8">

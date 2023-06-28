@@ -24,7 +24,7 @@ function Navbar() {
         <span id="brand-logo" className='flex basis-6/12 justify-content-start'>
           <a href="/">
             <FontAwesomeIcon className="text-black text-4xl sm:text-5xl" icon={icon({name: 'brain', style: 'solid'})} />
-            <h1 id="logo-text" className="font-serif font-bold text-base sm:text-2xl">neuro-aid</h1>
+            <h1 id="logo-text" className="font-sans font-bold text-base sm:text-2xl">neuro-aid</h1>
           </a>
         </span>
         <nav className="flex items-center justify-end h-16 basis-6/12">

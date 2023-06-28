@@ -41,7 +41,7 @@ function BlogPost() {
 
   function giveCopyFeedback() {
     const element = document.getElementById('link-copied');
-    element.innerHTML = '<p class="text-black font-semibold text-base sm:text-xl place-items-center m-auto align-middle">Link copied!</p>';
+    element.innerHTML = '<p class="text-black font-semibold text-base sm:text-lg place-items-center m-auto align-middle">Link copied!</p>';
     setTimeout(() => {
       element.innerHTML = '';
     }, '3000');
@@ -60,22 +60,22 @@ function BlogPost() {
           <img className="mb-8 mx-auto" src={post !== null ? post.photo : loading} alt={post !== null ? post.alt : loading}></img>
           <div className="bg-white rounded-3xl shadow-lg px-4 py-3 sm:px-8 sm:py-6 mb-4">
             {/* dangerouslySetInnerHTML: https://stackoverflow.com/questions/68133492/keep-text-formatting-in-mongodb */}
-            <p className="text-lg text-left leading-loose border-b-2 border-orange border-solid pb-4" dangerouslySetInnerHTML={post !== null ? {__html: post.intro} : {__html: loading}}></p>
+            <p className="text-base sm:text-lg text-left leading-loose border-b-2 border-orange border-solid pb-4" dangerouslySetInnerHTML={post !== null ? {__html: post.intro} : {__html: loading}}></p>
             <br />
             {/* Whitespace pre-wrap: https://stackoverflow.com/questions/63148489/how-to-get-the-full-text-format-from-mongodb-database-that-inserted-with-input-f */}
-            <p className="text-lg text-left leading-loose whitespace-pre-wrap border-b-2 border-orange border-solid pb-4" dangerouslySetInnerHTML={post !== null ? {__html: post.body} : {__html: loading}}></p>
+            <p className="text-base sm:text-lg text-left leading-loose whitespace-pre-wrap border-b-2 border-orange border-solid pb-4" dangerouslySetInnerHTML={post !== null ? {__html: post.body} : {__html: loading}}></p>
             <br />
-            <p className="text-lg text-left leading-loose" dangerouslySetInnerHTML={post !== null ? {__html: post.conclusion} : {__html: loading}}></p>
+            <p className="text-base sm:text-lg text-left leading-loose" dangerouslySetInnerHTML={post !== null ? {__html: post.conclusion} : {__html: loading}}></p>
           </div>
           <div className="flex place-content-center sm:place-content-start px-4 sm:px-8">
-            <div className="flex items-center bg-blue rounded-3xl shadow-lg px-4 py-1">
-              <a className="" rel="noreferrer" title="Share to Twitter" target="_blank" href={'https://twitter.com/intent/tweet?text=' + `${post !== null ? post.title : loading}` + ': ' + `https://neuroaid.onrender.com/blog/${params.title}`}>
-                <FontAwesomeIcon className="text-black text-left text-3xl sm:text-4xl mt-2 mr-1 hover:text-gray" icon={faTwitter} />
+            <div className="flex items-center">
+              <p className="inline mr-2">Share</p>
+              <a className="mr-1" rel="noreferrer" title="Share to Twitter" target="_blank" href={'https://twitter.com/intent/tweet?text=' + `${post !== null ? post.title : loading}` + ': ' + `https://neuroaid.onrender.com/blog/${params.title}`}>
+                <FontAwesomeIcon className="text-black text-left text-2xl sm:text-3xl hover:text-gray" icon={faTwitter} />
               </a>
               <button onClick={copyLink}>
-                <FontAwesomeIcon title="Copy blog post's link" className="text-black text-3xl sm:text-4xl hover:text-gray" icon={icon({name: 'link', style: 'solid'})} />
+                <FontAwesomeIcon title="Copy blog post's link" className="text-black text-2xl sm:text-3xl hover:text-gray" icon={icon({name: 'link', style: 'solid'})} />
               </button>
-              
             </div>
             <span id='link-copied' className="my-auto ml-2"></span>
           </div>
