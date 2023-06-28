@@ -1,3 +1,4 @@
+previewsEnabled: true
 name: neuroaid-web-app-client
 buildCommand: npm ci && npm run build
 publishDir: build

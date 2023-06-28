@@ -19,7 +19,7 @@ function BlogPost() {
   const params = useParams();
 
   useEffect(() => {
-    axios.get(`https://neuroaid-api.onrender.com/blog/${params.title}`)
+    axios.get(`${process.env.REACT_APP_API}/blog/${params.title}`)
         .then(response => {
           console.log('response: ', response);
           updatePost(response.data);
@@ -31,12 +31,11 @@ function BlogPost() {
 
   function copyLink() {
     console.log('params: ', params.title);
-    const link = `https://neuroaid-api.onrender.com/blog/${params.title}`;
+    const link = `${process.env.REACT_APP_API}/blog/${params.title}`;
     (async () => {
       // navigator.clipboard.writeText: https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
       await navigator.clipboard.writeText(link);
       giveCopyFeedback();
-      // alert('Link copied!');
     })();
   }
 
@@ -70,7 +69,7 @@ function BlogPost() {
           </div>
           <div className="flex place-content-center sm:place-content-start px-4 sm:px-8">
             <div className="flex items-center bg-blue rounded-3xl shadow-lg px-4 py-1">
-              <a className="" rel="noreferrer" title="Share to Twitter" target="_blank" href={'https://twitter.com/intent/tweet?text=' + `${post !== null ? post.title : loading}` + ': ' + `https://neuroaid-api.onrender.com/blog/${params.title}`}>
+              <a className="" rel="noreferrer" title="Share to Twitter" target="_blank" href={'https://twitter.com/intent/tweet?text=' + `${post !== null ? post.title : loading}` + ': ' + `https://neuroaid.onrender.com/blog/${params.title}`}>
                 <FontAwesomeIcon className="text-black text-left text-3xl sm:text-4xl mt-2 mr-1 hover:text-gray" icon={faTwitter} />
               </a>
               <button onClick={copyLink}>

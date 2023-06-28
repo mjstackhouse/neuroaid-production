@@ -13,8 +13,8 @@ function BlogList() {
   const [posts, updatePosts] = useState(null);
 
   const getPosts = async () => {
-    console.log('REACT_APP_SERVER: ', process.env.REACT_APP_SERVER);
-    const response = await axios.get(`https://neuroaid-api.onrender.com/blog`);
+    console.log('process.env.REACT_APP_API: ', process.env.REACT_APP_API);
+    const response = await axios.get(`${process.env.REACT_APP_API}/blog`);
     updatePosts(await response.data);
     console.log('data: ', await response.data);
   }
