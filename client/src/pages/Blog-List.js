@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 import MailingList from "../components/MailingList";
 import DownloadNow from "../components/DownloadNow";
 import GoBackToTop from "../components/Go-Back-To-Top";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { icon } from '@fortawesome/fontawesome-svg-core/import.macro';
 
 function BlogList() {
 
@@ -15,7 +17,6 @@ function BlogList() {
     console.log('process.env.REACT_APP_API: ', process.env.REACT_APP_API);
     const response = await axios.get(`${process.env.REACT_APP_API}/blog`);
     updatePosts(await response.data);
-    console.log('data: ', await response.data);
   }
 
   // Empty dependencies: https://stackoverflow.com/questions/53070970/infinite-loop-in-useeffect
@@ -35,7 +36,8 @@ function BlogList() {
           { posts !== null ? posts.map((element) => { return <Link to={`${element.params}`} 
           className='basis-full bg-white rounded-3xl hover:text-orange shadow-lg border-black border-solid mx-auto mb-12 p-4 sm:p-8'>
           <img src={element.photo} alt={element.alt} className='basis-full'/><h2 className='font-mono text-2xl sm:text-3xl font-bold text-left mt-2 sm:mt-4'>{element.title}</h2>
-          <h3 className="sm:text-xl text-left text-gray mt-2">{element.date}</h3></Link>; }) : loading }
+          <h3 className="sm:text-xl text-left text-gray mt-2">{element.date}</h3></Link>; }) : <FontAwesomeIcon className="text-black text-4xl align-middle spinning mx-auto my-16" role='alert' aria-busy='true' icon={icon({name: 'circle-notch', style: 'solid'})} />
+          }
         </div>
       </div>
       <DownloadNow />

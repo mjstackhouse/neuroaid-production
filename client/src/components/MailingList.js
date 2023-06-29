@@ -7,13 +7,9 @@ function MailingList() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log('event: ', e);
 
-    console.log('user email: ', email);
-
-    axios.post('https://neuroaid-api.onrender.com/mailinglist', { email: email })
+    axios.post(`${process.env.REACT_APP_API}/mailinglist`, { email: email })
           .then(response => {
-            console.log('response: ', response);
             response.data.response === "You're already subscribed!" ? alreadySubscribed('mailing-list-container') : emailSubscribe('mailing-list-container');
           })
           .catch(error => {
