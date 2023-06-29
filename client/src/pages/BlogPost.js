@@ -52,7 +52,7 @@ function BlogPost() {
       <Navbar />
       <div className="bg-[#F2F2F2] basis-full">
         <article className="grid mx-auto mb-8 sm:mb-12 body-width">
-          <h1 className='font-mono basis-full text-black font-bold my-4 sm:mt-8 sm:mb-4 text-2xl sm:text-4xl border-b-4 sm:border-b-8 border-blue border-solid pb-2'>{post !== null ? post.title : loading}</h1>
+          <h1 className='font-mono basis-full text-black font-bold my-4 sm:mt-8 sm:mb-4 text-2xl sm:text-4xl border-b-4 sm:border-b-8 border-blue border-solid pb-2'>{post !== null ? post.title : <FontAwesomeIcon className="text-black text-4xl align-middle spinning mx-auto my-16" role='alert' aria-busy='true' icon={icon({name: 'circle-notch', style: 'solid'})} />}</h1>
           <div className="text-center mb-4">
             <span className="inline text-gray">By {post !== null ? post.author : loading} |</span>
             <span className="inline text-gray"> {post !== null ? post.date : loading}</span>

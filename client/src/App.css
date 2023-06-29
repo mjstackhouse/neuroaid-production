@@ -91,6 +91,18 @@ li {
 
 /* ANIMATIONS */
 
+.spinning {
+  animation-duration: 1.25s;
+  animation-name: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
 @keyframes rotate {
   0% { transform: rotate(0); }
   33% { transform: rotate(-20deg); }
@@ -172,7 +184,7 @@ li {
 /* MEDIA QUERIES */
 
 @media (prefers-reduced-motion: reduce) {
-  .bounce-animation, .writing-animation, .arrow-x-animation, .bell-animation, .arrow-up-animation, #arrow-icon {
+  .bounce-animation, .writing-animation, .arrow-x-animation, .bell-animation, .arrow-up-animation, #arrow-icon, .spinning {
     animation-name: none;
   }
 }
