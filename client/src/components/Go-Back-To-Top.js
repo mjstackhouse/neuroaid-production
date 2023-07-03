@@ -17,12 +17,10 @@ function GoBackToTop() {
   // Inspiration: https://www.geeksforgeeks.org/how-to-create-a-scroll-to-top-button-in-react-js/
   function showTopBtn() {
     if (window.scrollY > 400 && btnVisibility === 'none') {
-      console.log('reveal');
       setBtnVisibility('block');
       $('#go-back-to-top').removeClass('hidden');
     }
     else if (window.scrollY < 400 && btnVisibility === 'block') {
-      console.log('hide');
       setBtnVisibility('none');
       $('#go-back-to-top').addClass('hidden');
     }
