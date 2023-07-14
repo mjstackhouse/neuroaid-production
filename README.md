@@ -1,3 +1,5 @@
+*THE BACKEND ASPECT OF THIS APPLICATION WILL TAKE A MOMENT TO LOAD DUE TO USING RENDER.COM'S FREE PLAN*
+
 # MERN Stack Web App with a Front-End Focus for a mobile app called Neuro-Aid
 
 ## The Technologies Used and Their Purpose
